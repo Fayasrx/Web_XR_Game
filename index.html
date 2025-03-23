@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#ECECEC"></a-sky>  <!-- Background -->
+      
+      <!-- Ground -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+      
+      <!-- Player (Camera) -->
+      <a-entity position="0 1.6 0">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <!-- Moving Cube -->
+      <a-box position="0 0.5 -3" color="red" 
+             animation="property: rotation; to: 0 360 0; loop: true;"></a-box>
+
+      <!-- Teleportation Area -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="green"
+               class="clickable" event-set__click="position: 0 1.6 -2"></a-plane>
+      
+      <!-- VR Controls -->
+      <a-entity laser-controls="hand: right"></a-entity>
+    </a-scene>
+  </body>
+</html>
